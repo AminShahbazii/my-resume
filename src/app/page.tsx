@@ -53,7 +53,7 @@ export default function Home() {
                 <span className={`${inter.className} font-medium`} >Abolfazl Shahbazi</span>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8 text-justify">
                 <span className={`${newsreader.className} italic`}>
                     Crafting robust backends.
                 </span>{" "}
@@ -91,12 +91,12 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="mt-15">
+            <div className="mt-15 text-justify">
                 <div className="text-lg mb-5">Now</div>
                 <div>
                     Freelancing as a Backend Developer, sharpening Go‑based architectures and scalable API design. Recharging on psychology and <span className={`${newsreader.className} italic`}>history</span> reads, and leveling up strategic thinking through narrative‑driven video games.
                 </div>
-                <div className="my-3">
+                <div className="my-5">
                     Exploring software craftsmanship beyond code—studying architecture patterns, systems design, and the invisible elegance that makes software feel seamless.
                 </div>
                 <div>Always learning, always building.</div>
