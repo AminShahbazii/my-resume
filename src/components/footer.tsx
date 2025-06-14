@@ -29,7 +29,7 @@ export function Footer() {
                         />
                     </a>
                     <a
-                        href="https://x.com/read_joqd"
+                        href="https://x.com/0xjoqd"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:opacity-100 opacity-75 transition-opacity"
