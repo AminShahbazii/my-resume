@@ -2,6 +2,13 @@ import "./globals.css";
 import { Footer } from "@/components/footer";
 
 
+export const metadata = {
+    title: "Joqd",
+    icons: {
+        icon: "/favicon.ico",
+    },
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
