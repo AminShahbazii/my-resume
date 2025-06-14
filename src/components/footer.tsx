@@ -1,7 +1,7 @@
 export function Footer() {
     return (
         <footer className="w-full h-[47px] border-t mt-12">
-            <div className="max-w-[640px] mx-auto h-[47px]  px-2.5 sm:px-0 flex items-center justify-between text-sm opacity-75">
+            <div className="max-w-[640px] mx-auto h-[47px]  px-6 sm:px-0 flex items-center justify-between text-sm opacity-75">
                 <p>Virtu Vince Fortuna</p>
                 <div className="flex items-center gap-2.5">
                     <a
