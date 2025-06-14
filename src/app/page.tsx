@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Newsreader } from "next/font/google";
 import { Inter } from "next/font/google";
-import localFont from 'next/font/local'
+import localFont from 'next/font/local';
 
 import ProjectsList from "@/components/project-list";
 import ExperienceList from "@/components/experience-list";
@@ -11,7 +11,7 @@ import ExperienceList from "@/components/experience-list";
 const inter = Inter({
     subsets: ["latin"],
     weight: ['400', '500']
-})
+});
 
 const newsreader = Newsreader({
     subsets: ["latin"],
@@ -20,12 +20,13 @@ const newsreader = Newsreader({
 
 const sohne = localFont({
     src: '../fonts/Sohne.woff2',
-})
-
+});
 
 export default function Home() {
     const [showLeftFade, setShowLeftFade] = useState(false);
     const [showRightFade, setShowRightFade] = useState(false);
+    const [usedScroll, setUsedScroll] = useState(false);
+    const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
     const scrollRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
@@ -33,19 +34,43 @@ export default function Home() {
         if (!el) return;
 
         const updateFades = () => {
-            setShowLeftFade(el.scrollLeft > 0);
-            setShowRightFade(el.scrollLeft + el.clientWidth < el.scrollWidth);
+            const { scrollLeft, clientWidth, scrollWidth } = el;
+            setShowLeftFade(scrollLeft > 0);
+            setShowRightFade(scrollLeft + clientWidth < scrollWidth);
+        };
+
+        const onScroll = () => {
+            updateFades();
+            setUsedScroll(true);
+
+            if (timerId) clearTimeout(timerId);
+            const id = setTimeout(() => {
+                setUsedScroll(false);
+            }, 10000);
+            setTimerId(id);
         };
 
         updateFades();
-        el.addEventListener("scroll", updateFades);
+        el.addEventListener("scroll", onScroll);
         window.addEventListener("resize", updateFades);
 
         return () => {
-            el.removeEventListener("scroll", updateFades);
+            el.removeEventListener("scroll", onScroll);
             window.removeEventListener("resize", updateFades);
+            if (timerId) clearTimeout(timerId);
         };
-    }, []);
+    }, [timerId]);
+
+    const scrollBy = (distance: number) => {
+        scrollRef.current?.scrollBy({ left: distance, behavior: 'smooth' });
+        setUsedScroll(true);
+
+        if (timerId) clearTimeout(timerId);
+        const id = setTimeout(() => {
+            setUsedScroll(false);
+        }, 10000);
+        setTimerId(id);
+    };
 
     return (
         <main className={`${sohne.className} opacity-90`}>
@@ -64,30 +89,48 @@ export default function Home() {
 
             <div className="mt-10">
                 <div className="relative w-full">
+                    {/* Left arrow */}
+                    <button
+                        onClick={() => scrollBy(-250)}
+                        className={`absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full p-1 bg-white/75 hover:bg-white transition-opacity duration-300 ${showLeftFade && !usedScroll ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+                    >
+                        <img
+                            src="/icons/chevron-left.svg"
+                            alt="Scroll left"
+                            className="h-5 w-5 opacity-50"
+                        />
+                    </button>
+
                     {/* Scrollable Area */}
-                    <div ref={scrollRef} className="overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                    <div
+                        ref={scrollRef}
+                        className="overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent"
+                    >
                         <div className="flex w-max space-x-5 pb-2">
-                            <div>
-                                <ExperienceList />
-                            </div>
-                            <div>
-                                <ProjectsList />
-                            </div>
+                            <ExperienceList />
+                            <ProjectsList />
                         </div>
                     </div>
 
-                    {/* Right Fade */}
-                    <div
-                        className={`pointer-events-none absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-white to-transparent transition-opacity duration-150 ${showRightFade ? "opacity-100" : "opacity-0"
-                            }`}
-                    />
+                    {/* Right arrow */}
+                    <button
+                        onClick={() => scrollBy(250)}
+                        className={`absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full p-1 bg-white/75 hover:bg-white transition-opacity duration-300 ${showRightFade && !usedScroll ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+                    >
+                        <img
+                            src="/icons/chevron-right.svg"
+                            alt="Scroll right"
+                            className="h-5 w-5 opacity-50"
+                        />
+                    </button>
 
-                    {/* Left Fade */}
+                    {/* Fading gradients */}
                     <div
-                        className={`pointer-events-none absolute top-0 left-0 h-full w-8 bg-gradient-to-r from-white to-transparent transition-opacity duration-150 ${showLeftFade ? "opacity-100" : "opacity-0"
-                            }`}
+                        className={`pointer-events-none absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-white to-transparent transition-opacity duration-150 ${showRightFade ? 'opacity-100' : 'opacity-0'}`}
                     />
-
+                    <div
+                        className={`pointer-events-none absolute top-0 left-0 h-full w-8 bg-gradient-to-r from-white to-transparent transition-opacity duration-150 ${showLeftFade ? 'opacity-100' : 'opacity-0'}`}
+                    />
                 </div>
             </div>
 
