@@ -9,7 +9,7 @@ type Experience = {
 const expericences: Experience[] = [
     {
         title: "Healifa",
-        description: "Collaboration in backend development with Django framework.",
+        description: "Collaboration in backend development with Django framework (2024-2025).",
         url: "https://healifa.com",
     },
     {
@@ -21,9 +21,9 @@ const expericences: Experience[] = [
 
 export default function ExperienceList() {
     return (
-        <div className="space-y-6 max-w-[300px] w-full">
+        <div className="space-y-4 max-w-[300px] w-full">
             <h2 className="text-sm font-medium text-muted-foreground">Experiences</h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
                 {expericences.map((experience, i) => (
                     <div key={i} className="space-y-1 w-full">
                         <Link

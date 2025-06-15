@@ -21,9 +21,9 @@ const projects: Project[] = [
 
 export default function ProjectList() {
     return (
-        <div className="space-y-6 max-w-[300px] w-full">
+        <div className="space-y-4 max-w-[300px] w-full">
             <h2 className="text-sm font-medium text-muted-foreground">Projects</h2>
-            <div className="space-y-6">
+            <div className="space-y-4">
                 {projects.map((project, i) => (
                     <div key={i} className="space-y-1 w-full">
                         <Link
