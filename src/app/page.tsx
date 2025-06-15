@@ -74,11 +74,13 @@ export default function Home() {
 
     return (
         <main className={`${sohne.className} opacity-90`}>
-            <div className="sm:pt-[128px] pt-[64px] text-base font-medium">
+            {/* My name */}
+            <div className="sm:pt-[128px] pt-[64px] text-lg font-medium">
                 <span className={`${inter.className} font-medium`} >Abolfazl Shahbazi</span>
             </div>
 
-            <div className="mt-8 text-justify">
+            {/* About secion */}
+            <div className="mt-3 text-justify">
                 <span className={`${newsreader.className} italic`}>
                     Crafting robust backends.
                 </span>{" "}
@@ -87,7 +89,8 @@ export default function Home() {
                 patterns.
             </div>
 
-            <div className="mt-10">
+            {/* Projects section */}
+            <div className="mt-6">
                 <div className="relative w-full">
                     {/* Left arrow */}
                     <button
@@ -106,7 +109,7 @@ export default function Home() {
                         ref={scrollRef}
                         className="overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent"
                     >
-                        <div className="flex w-max space-x-5 pb-2">
+                        <div className="flex w-max space-x-5">
                             <ExperienceList />
                             <ProjectsList />
                         </div>
@@ -134,21 +137,26 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="mt-15 text-justify">
-                <div className="text-lg mb-5">Now</div>
+            {/* Now section */}
+            <div className="mt-10 text-justify">
+                <div className="text-lg mb-3">Now</div>
                 <div>
                     Freelancing as a Backend Developer, sharpening Go‑based architectures and scalable API design. Recharging on psychology and <span className={`${newsreader.className} italic`}>history</span> reads, and leveling up strategic thinking through narrative‑driven video games.
                 </div>
-                <div className="my-5">
+                <div className="my-3">
                     Exploring software craftsmanship beyond code—studying architecture patterns, systems design, and the invisible elegance that makes software feel seamless.
                 </div>
                 <div>Always learning, always building.</div>
             </div>
 
-            <div className="mt-10 mb-20">
-                <div className="text-lg mb-5">Contact</div>
-                Reach me at{" "}
-                <span className="underline">rodia2559@gmail.com</span>
+
+            {/* Contact secion */}
+            <div className="mt-10 mb-15 space-y-3">
+                <div className="text-lg">Contact</div>
+                <div>
+                    Reach me at{" "}
+                    <span className="underline">rodia2559@gmail.com</span>
+                </div>
             </div>
         </main>
     );
