@@ -109,7 +109,7 @@ export default function Home() {
                         ref={scrollRef}
                         className="overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent"
                     >
-                        <div className="flex w-max space-x-5">
+                        <div className="flex w-max space-x-5 pb-2">
                             <ExperienceList />
                             <ProjectsList />
                         </div>
