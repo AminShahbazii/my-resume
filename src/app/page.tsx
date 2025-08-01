@@ -76,7 +76,7 @@ export default function Home() {
         <main className={`${sohne.className} opacity-90`}>
             {/* My name */}
             <div className="sm:pt-[128px] pt-[64px] text-lg font-medium">
-                <span className={`${inter.className} font-medium`} >Abolfazl Shahbazi</span>
+                <span className={`${inter.className} font-medium`} >Mohammad Amin Shahbazi</span>
             </div>
 
             {/* About secion */}
@@ -84,7 +84,7 @@ export default function Home() {
                 <span className={`${newsreader.className} italic`}>
                     Crafting robust backends.
                 </span>{" "}
-                Building reliable, maintainable services with Go. Detail‑driven and
+                Building reliable, maintainable services with Asp.Net Core. Detail‑driven and
                 team‑focused, grounded in software architecture and proven design
                 patterns.
             </div>
@@ -141,10 +141,10 @@ export default function Home() {
             <div className="mt-10 text-justify">
                 <div className="text-lg mb-3">Now</div>
                 <div>
-                    Freelancing as a Backend Developer, sharpening Go‑based architectures and scalable API design. Recharging on psychology and <span className={`${newsreader.className} italic`}>history</span> reads, and leveling up strategic thinking through narrative‑driven video games.
+                    Learning and growing as a Backend Developer with a focus on C# and ASP.NET Core, always aiming for clean, maintainable APIs and solid architecture.I recharge through psychology books and  <span className={`${newsreader.className} italic`}>classic novels</span> and I enjoy immersive story-driven games — with a bit of Souls-like challenge on the side.
                 </div>
                 <div className="my-3">
-                    Exploring software craftsmanship beyond code—studying architecture patterns, systems design, and the invisible elegance that makes software feel seamless.
+                    Exploring software beyond just code — studying system design, architecture patterns, and the quiet elegance that makes great software feel effortless.
                 </div>
                 <div>Always learning, always building.</div>
             </div>
@@ -155,7 +155,7 @@ export default function Home() {
                 <div className="text-lg">Contact</div>
                 <div>
                     Reach me at{" "}
-                    <span className="underline">rodia2559@gmail.com</span>
+                    <span className="underline">iamaminsh@gmail.com</span>
                 </div>
             </div>
         </main>

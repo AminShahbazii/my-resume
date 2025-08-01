@@ -8,14 +8,14 @@ type Project = {
 
 const projects: Project[] = [
     {
-        title: "Slovo",
-        description: "Russian Dictionary & Learning Platform.",
-        url: "https://github.com/joqd/slovo",
+        title: "Authentication-Authorization-JWT",
+        description: "Authentication-And-Usermanagement-And a little Authorization.",
+        url: "https://github.com/AminShahbazii/Authentication-And-Usermanagement",
     },
     {
-        title: "Zen",
-        description: "A simple user management, authentication, and role-based authorization system.",
-        url: "https://github.com/joqd/zen",
+        title: "Notification",
+        description: "It is a service. It is for imaginary microservice and i have no idea why I developed it.",
+        url: "https://github.com/AminShahbazii/NotificationService",
     },
 ];
 

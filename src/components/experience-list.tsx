@@ -8,15 +8,11 @@ type Experience = {
 
 const expericences: Experience[] = [
     {
-        title: "Healifa",
-        description: "Collaboration in backend development with Django framework (2024-2025).",
+        title: "Nothing",
+        description: "Still learning, still trying, still fixing my own bugs. It is not a job yet, but it is real work.",
         url: "https://healifa.com",
     },
-    {
-        title: "Ponisha",
-        description: "Collaboration on several projects on the Ponisha job site.",
-        url: "https://ponisha.ir/profile/gorgdis",
-    },
+
 ];
 
 export default function ExperienceList() {
