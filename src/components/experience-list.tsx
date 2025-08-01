@@ -10,9 +10,8 @@ const expericences: Experience[] = [
     {
         title: "Nothing",
         description: "Still learning, still trying, still fixing my own bugs. It is not a job yet, but it is real work.",
-        url: "https://healifa.com",
-    },
-
+        url: "https://github.com/AminShahbazii",
+    }
 ];
 
 export default function ExperienceList() {
