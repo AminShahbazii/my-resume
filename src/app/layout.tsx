@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 
 
 export const metadata = {
-    title: "Joqd",
+    title: "Amin",
     icons: {
         icon: "/favicon.ico",
     },
