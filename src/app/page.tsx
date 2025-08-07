@@ -141,7 +141,7 @@ export default function Home() {
             <div className="mt-10 text-justify">
                 <div className="text-lg mb-3">Now</div>
                 <div>
-                    Learning and growing as a Backend Developer with a focus on C# and ASP.NET Core, always aiming for clean, maintainable APIs and solid architecture.I recharge through psychology books and  <span className={`${newsreader.className} italic`}>classic novels</span> and I enjoy immersive story-driven games — with a bit of Souls-like challenge on the side.
+                    Learning and growing as a Backend Developer with a focus on C# and ASP.NET Core, always aiming for clean, maintainable APIs and solid architecture.I recharge through psychology books and  <span className={`${newsreader.className} italic`}>classic novels</span> and I enjoy immersive story-driven games — with a bit of Souls-like challenge on the side.If you believe it, I am actually Elden Lord.
                 </div>
                 <div className="my-3">
                     Exploring software beyond just code — studying system design, architecture patterns, and the quiet elegance that makes great software feel effortless.

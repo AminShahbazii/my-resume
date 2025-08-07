@@ -7,6 +7,11 @@ type Project = {
 };
 
 const projects: Project[] = [
+        {
+        title: "AuthNotify",
+        description: "Somthing like auth and notif and a little microsrvice stuff.",
+        url: "https://github.com/AminShahbazii/AuthNotify",
+    },
     {
         title: "Authentication-Authorization-JWT",
         description: "Authentication-And-Usermanagement-And a little Authorization.",
